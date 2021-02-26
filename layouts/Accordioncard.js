@@ -8,7 +8,7 @@
  * - Feb 26, 2021, developer Martin Hwang < developer.martinhwang@gmail.com >
  *   : created
  */
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 // material-ui core
 import {Box, Typography, Accordion, AccordionSummary, AccordionDetails} from "@material-ui/core";
 // material-ui style

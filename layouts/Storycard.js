@@ -77,7 +77,7 @@ const flexDirection = (index) => {
         return "row"
     }
 }
-export default function StoryCard(prop) {
+export default function Storycard(prop) {
     const classes = useStyles();
     return (
         <Box className={classes.root}>
