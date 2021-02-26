@@ -1,19 +1,21 @@
 // next.js
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Link from 'next/link';
+// main styles
+import styles from '../styles/Home.module.css';
 // layouts/Footer.js
 import Footer from '../layouts/Footer';
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Martin's Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <a href="#">Martin's Blog</a>
         </h1>
 
         <p className={styles.description}>
@@ -22,14 +24,15 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
+          <a href="/modules/module" className={styles.card}>
+            <h3>Modules</h3>
+            <p>Story Card</p>
+            <p>Accordion Card</p>
           </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
+          <a href="auth/login" className={styles.card}>
+            <h3>Auth &rarr;</h3>
+            <p>Login</p>
           </a>
 
           <a

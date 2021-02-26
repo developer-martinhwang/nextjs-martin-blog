@@ -75,10 +75,10 @@ export default function Footer (prop) {
                     <Typography variant="h5">Follow Martin Hwang</Typography>
                     <List>
                     <ListItem className={classes.listItem}>
-                        <LinkedIn /> <Link className={classes.link} href="/">LinkedIn</Link>
+                        <LinkedIn /> <Link className={classes.link} href="https://www.linkedin.com/in/martin-hwang-developer/">LinkedIn</Link>
                     </ListItem>
                     <ListItem className={classes.listItem}>
-                        <Facebook /> <Link className={classes.link} href="/">Facebook</Link>
+                        <Facebook /> <Link className={classes.link} href="https://www.facebook.com/MartinHwangs">Facebook</Link>
                     </ListItem>
                     </List>
                 </Box>
@@ -92,7 +92,7 @@ export default function Footer (prop) {
                         <AccountBox /> <Link className={classes.link} href="/">Log in</Link>
                     </ListItem>
                     <ListItem className={classes.listItem}>
-                        <DeveloperBoard /> <Link className={classes.link} href="/blog/storyboard">Storyboard</Link>
+                        <DeveloperBoard /> <Link className={classes.link} href="/modules/module">module</Link>
                     </ListItem>
                     <ListItem className={classes.listItem}>
                         <Description /> <Link className={classes.link} href="/">Terms & Conditions</Link>
