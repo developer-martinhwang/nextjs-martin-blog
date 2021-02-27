@@ -167,7 +167,7 @@ export default function Loginpaper() {
                     </Grid>
                     <Grid item className={classes.signupnow}>
                     <Link href="/authentication/signup" variant="body2">
-                        New to Proudtale? Sign up Now
+                        New? Sign up Now
                     </Link>
                     </Grid>
                 </Box>
