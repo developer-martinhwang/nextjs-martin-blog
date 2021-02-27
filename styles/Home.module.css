@@ -1,9 +1,6 @@
 .container {
   min-height: 100vh;
   padding: 0 0.5rem;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
   align-items: center;
 }
 
@@ -72,7 +69,7 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   width: 20em;
-  height: 10em;
+  height: 11em;
 }
 
 .card:hover,

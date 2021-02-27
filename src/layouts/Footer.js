@@ -9,11 +9,13 @@
  */
 // next.js
 import Link from 'next/link';
+import {useState} from 'react';
 // material-ui-core
 import {Box, 
         List, 
         ListItem, 
-        Typography} from '@material-ui/core';
+        Typography,
+        Link as MLink} from '@material-ui/core';
 // material-ui-styles
 import {makeStyles} from "@material-ui/styles";
 // material-ui icons
@@ -24,6 +26,8 @@ import {AccountBox,
         Home,
         DeveloperBoard,
         Description} from "@material-ui/icons";
+import MyDialog from "../tags/MyDialog";        
+import {termsConditionsTitle, termsConditionsContent} from "../dialog/footerDialog";
 const useStyles = makeStyles({
     root: {
         background: prop => prop.background,
@@ -64,10 +68,41 @@ const useStyles = makeStyles({
         "& span":{
             color: "#304ffe"
         }
+    },
+    mLink: {
+       '&:hover': {
+           cursor: "pointer"
+       }
     }
 })
 export default function Footer (prop) {
     const classes = useStyles(prop);
+    const [dialog, setDialog] = useState({
+        termsConditions: false,
+    })
+    // terms and conditions dialog open
+    const handleDialogOpen = (e) => {
+        setDialog(prevState => ({
+            ...prevState,
+            [e.target.id]: true
+        }))
+        console.log(dialog);
+    }
+    // terms and conditions dialog close
+    const handleDialogClose = () => {
+        setDialog({
+            termsConditions: false,
+        })
+    }
+    const termsConditions = (
+        <MyDialog
+          dialogTitleActive={true}
+          onClose={handleDialogClose}
+          open={dialog.termsConditions}
+          title={termsConditionsTitle}
+          dividers={true}
+          content={termsConditionsContent}
+        />);
     return (
         <Box className={classes.root}>
             <Box className={classes.row}>
@@ -89,13 +124,13 @@ export default function Footer (prop) {
                         <Home /> <Link className={classes.link} href="/">Home</Link>
                     </ListItem>
                     <ListItem className={classes.listItem}>
-                        <AccountBox /> <Link className={classes.link} href="/">Log in</Link>
+                        <AccountBox /> <Link className={classes.link} href="/auths/login">Log in</Link>
                     </ListItem>
                     <ListItem className={classes.listItem}>
-                        <DeveloperBoard /> <Link className={classes.link} href="/modules/module">module</Link>
+                        <DeveloperBoard /> <Link className={classes.link} href="/modules/module">Modules</Link>
                     </ListItem>
                     <ListItem className={classes.listItem}>
-                        <Description /> <Link className={classes.link} href="/">Terms & Conditions</Link>
+                        <Description /> <a className={classes.mLink} id="termsConditions" onClick={handleDialogOpen}>Terms & Conditions</a>
                     </ListItem>
                     </List>
                 </Box>
@@ -111,6 +146,7 @@ export default function Footer (prop) {
             <Box className={classes.row} paddingTop="20px">
             <Typography className={classes.copyright} variant="body1">Copyright &copy; {new Date().getFullYear()}, All Right Reserved <Link href="/">Martin Hwang</Link></Typography>
             </Box>
+            {termsConditions}
         </Box>
     )
 }

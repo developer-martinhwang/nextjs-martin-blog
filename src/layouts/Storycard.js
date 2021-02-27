@@ -8,14 +8,16 @@
  * - Feb 26, 2021, developer Martin Hwang < developer.martinhwang@gmail.com >
  *   : created
  */
+import Image from 'next/image';
 // material-ui core
 import {Box, Typography} from "@material-ui/core";
 // material-ui style
 import {makeStyles} from "@material-ui/styles";
+// import javascript from "/assets"
 const useStyles = makeStyles({
     root: {
         marginTop: "1em",
-        padding: "4em 3em 0 3em",
+        padding: "2em 3em 2em 3em",
         borderTop: "10px solid #303436",
         '@media screen and (max-width: 960px)': {
             padding: "4em 0 0 0",
@@ -39,10 +41,6 @@ const useStyles = makeStyles({
         }
     },
     image: {
-        backgroundSize:"contain",
-        backgroundPosition:"center",
-        backgroundRepeat:"no-repeat",
-        objectFit: "contain",
         height: "28vh",
         '@media screen and (max-width: 960px)': {
             marginBottom: "30px"
@@ -83,7 +81,12 @@ export default function Storycard(prop) {
         <Box className={classes.root}>
             <Box className={classes.row} flexDirection={flexDirection(prop.index)}>
                 <Box className={classes.col}>
-                    <Box className={classes.image} style={{backgroundImage:`url(${prop.image})`}}></Box>
+                    <img
+                        src={prop.image}
+                        width="500"
+                        height="350"
+                        className={classes.image}
+                    />
                 </Box>
                 <Box className={classes.col}>
                     <Typography className={classes.title}>{prop.title}</Typography>

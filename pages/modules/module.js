@@ -1,27 +1,23 @@
 // material-ui core
 import {Box} from '@material-ui/core';
 // layouts/Storyboard.js
-import Storycard from '../../layouts/Storycard';
-import Footer from '../../layouts/Footer';
-import AccordionCard from '../../layouts/Accordioncard';
+import Storycard from '../../src/layouts/Storycard';
+import Footer from '../../src/layouts/Footer';
+import AccordionCard from '../../src/layouts/Accordioncard';
 // main css 
 import styles from '../../styles/Home.module.css';
-// image 
-// import javascriptImage from '../../assets/images/javascriptImage.jpg';
-// import nodeGraphqlImage from '../../assets/images/nodeGraphql.jpg';
-// import reactjsNextjsImage from '../../assets/images/reactjsNextjs.jpg';
 const storyCardDummy = [
     {title: "Javascript", 
      subtitle: "It is good!! I like it.",
-    //  image: `${javascriptImage}`,
+     image: "/images/javascript.jpg",
     },
     {title: "Reactjs & Nextjs", 
-    subtitle: "It is better!!! I love it.",
-    // image: `${reactjsNextjsImage}`
+     subtitle: "It is better!!! I love it.",
+     image: "/images/nextReact.jpg",
     },
     {title: "Nodejs", 
-    subtitle: "? I love it.",
-    // image: `${nodeGraphqlImage}`
+     subtitle: "I can develop back-end. I love it.",
+     image: "/images/nodeGraphql.jpg",
     }
 ]
 const accordionDummy = [
@@ -44,6 +40,7 @@ export default function Module () {
                             index={index}
                             title={story.title}
                             subtitle={story.subtitle}
+                            image={story.image}
                             
                     />
                 ))}
