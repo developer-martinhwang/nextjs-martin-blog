@@ -83,7 +83,7 @@ export default function Storycard(prop) {
                 <Box className={classes.col}>
                     <img
                         src={prop.image}
-                        width="500"
+                        width="320"
                         height="350"
                         className={classes.image}
                     />
